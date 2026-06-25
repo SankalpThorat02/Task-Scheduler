@@ -19,7 +19,7 @@ public class JobSubmitRequest {
     private String taskType;
 
     @NotNull(message = "Execution timestamp is required")
-    private Long executeAt;
+    private String executeAt;
 
     @NotBlank(message = "Priority level is required")
     private String priority;
