@@ -31,7 +31,7 @@ public class JobExecutionLog {
     private JobStatus status;
 
     @Column(name = "execute_at", nullable = false)
-    private Long executeAt;
+    private String executeAt;
 
     @Column(name = "retry_count", nullable = false)
     @Builder.Default
