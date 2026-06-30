@@ -26,7 +26,6 @@ public class RedisQueueService {
     private static final String PAYLOAD_PREFIX = "job_data:";
 
     //test
-
     public void enqueueJob(String jobId, JobSubmitRequest request) {
         try {
             String jsonPayload = objectMapper.writeValueAsString(request);
@@ -38,6 +37,7 @@ public class RedisQueueService {
                 log.warn("OFFICE MODE: Redis connection failed. Skipping queue push, but continuing to save to Oracle.");
             }
 
+            //Catch instance of logger
             JobExecutionLog executionLog = JobExecutionLog.builder()
                     .jobId(jobId)
                     .taskType(request.getTaskType())
